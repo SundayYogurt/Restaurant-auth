@@ -16,7 +16,7 @@ const Update = () => {
 
   // 2. ดึงข้อมูลร้านอาหารจาก API ตาม id เมื่อ id เปลี่ยน
   useEffect(() => {
-    fetch("http://localhost:3000/restaurants/" + id)
+    fetch("http://localhost:3001/restaurants/" + id)
       .then((res) => {
         // แปลง response เป็น json
         return res.json();
@@ -40,7 +40,7 @@ const Update = () => {
   const handleSubmit = async () => {
     // เริ่มการรอ
     try {
-      const response = await fetch("http://localhost:3000/restaurants/" + id, {
+      const response = await fetch("http://localhost:3001/restaurants/" + id, {
         // ส่งข้อมูลแบบ PUT เพื่ออัปเดต
         method: "PUT",
         body: JSON.stringify(restaurant),

@@ -9,6 +9,8 @@ services: # กำหนดกลุ่มของ services (container) ที�
     volumes:
       - "./server:/app" # mount โฟลเดอร์ ./server จากเครื่อง host ไปยัง /app ใน container (hot reload ได้)
       - "/app/node_modules" # สร้าง volume แยกสำหรับ node_modules เพื่อไม่ให้ทับกับของ host
+    command: nodemon --legacy-watch index.js
+    restart: always
     environment: # กำหนด environment variables สำหรับ container นี้
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/app_db # URL สำหรับเชื่อมต่อกับฐานข้อมูล Postgres
       - HOST=db # ชื่อ host ของ database (service db)

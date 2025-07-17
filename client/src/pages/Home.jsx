@@ -27,17 +27,14 @@ const Home = () => {
 
   // ดึงข้อมูลร้านอาหารจาก API เมื่อ component mount
   useEffect(() => {
-    fetch("http://localhost:3000/restaurants")
+    fetch("http://localhost:3001/restaurants") // เปลี่ยน port ให้ตรงกับ API ที่รันอยู่จริง
       .then((res) => {
-        // แปลง response เป็น json
         return res.json();
       })
       .then((resp) => {
-        // บันทึกข้อมูลร้านอาหารทั้งหมดลงใน state
         setRestaurants(resp);
         setFilterRestaurant(resp)
       })
-      // กรณีเกิด error ให้แสดงใน console
       .catch((e) => {
         console.log(e.message);
       });
