@@ -18,7 +18,7 @@ const AddRes = () => {
   // handleSubmit ส่งข้อมูลไป API (POST)
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:3000/restaurants", {
+      const response = await fetch("http://localhost:3001/restaurants", {
         method: "POST",
         body: JSON.stringify(restaurant),
       });

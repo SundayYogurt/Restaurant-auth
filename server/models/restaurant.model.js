@@ -18,7 +18,7 @@ const Restaurant = sequelize.define("restaurant", {
         type: DataTypes.STRING,
         allowNull: false,
     }
-})
+})//create schema หรือโครงสร้างของข้อมูล
 
 Restaurant.sync({force: false}).then(()=>{
     console.log("Table created or already exists")
